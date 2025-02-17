@@ -61,7 +61,7 @@ const getUserLocation = () => {
           const data = await response.json();
           console.log("取得的地理資訊:", data);
 
-          // 解析區域資訊
+          // 解析縣市+區域資訊
           const city = data.address.city || data.address.county || "未知城市";
           const district = data.address.district || data.address.suburb || data.address.village || "未知區域";
           
