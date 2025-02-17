@@ -2,10 +2,10 @@
   <div class="container mx-auto p-6">
     <h1 class="text-2xl font-bold text-center mb-4">🚲 Ubike 即時查詢系統</h1>
     <div v-if="userLocation" class="text-center text-gray-500 mb-4">
-      📍 您的位置: {{ userLocation }}
+      📍 現在位置: {{ userLocation }}
 
     </div>
-    <SearchBar @update-search="searchTerm = $event" />
+    <SearchBar @update-search="searchTerm = $event" :stations="stations" />
     <UbikeList :stations="filteredStations" :lastUpdated="lastUpdated" />
   </div>
 </template>
@@ -17,7 +17,8 @@ import UbikeList from "./components/UbikeList.vue";
 
 const stations = ref([]);
 const searchTerm = ref("");
-const lastUpdated = ref(""); // 記錄最後更新時間
+
+const lastUpdated = ref("");
 const userLocation = ref(""); 
 
 
