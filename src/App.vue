@@ -1,10 +1,11 @@
 <template>
   <div class="container mx-auto p-6">
-    <h1 class="text-2xl font-bold text-center mb-4">🚲 Ubike 即時查詢系統</h1>
+    <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">🚲 Ubike 即時查詢系統</h1>
+    
     <div v-if="userLocation" class="text-center text-gray-500 mb-4">
-      📍 現在位置: {{ userLocation }}
-
+      📍 你的當前位置：<span class="font-semibold text-blue-500">{{ userLocation }}</span>
     </div>
+
     <SearchBar @update-search="searchTerm = $event" :stations="stations" />
     <UbikeList :stations="filteredStations" :lastUpdated="lastUpdated" />
   </div>
@@ -100,6 +101,6 @@ const filteredStations = computed(() => {
 
 <style>
 body {
-  @apply bg-gray-100;
+  @apply bg-blue-50;
 }
 </style>

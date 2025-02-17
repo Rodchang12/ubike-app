@@ -5,16 +5,16 @@
       @input="updateSearch"
       @focus="showSuggestions = true"
       placeholder="🔍 搜尋站點名稱或區域"
-      class="border p-2 rounded w-2/3"
+      class="border p-3 rounded-lg w-2/3 shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
     />
     
     <!-- 顯示匹配的站點名稱或區域 -->
-    <ul v-if="showSuggestions && filteredSuggestions.length > 0" class="absolute w-2/3 bg-white border mt-10 shadow-lg rounded">
+    <ul v-if="showSuggestions && filteredSuggestions.length > 0" class="absolute w-2/3 bg-white border mt-2 shadow-lg rounded-lg z-10">
       <li 
         v-for="(suggestion, index) in filteredSuggestions" 
         :key="index" 
         @click="selectSuggestion(suggestion)"
-        class="p-2 hover:bg-gray-200 cursor-pointer"
+        class="p-3 hover:bg-blue-100 cursor-pointer text-blue-700"
       >
         {{ suggestion }}
       </li>

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <p class="text-center text-gray-500 text-sm mb-2">最後更新時間: {{ lastUpdated }}</p>
-
+    <p class="text-center text-gray-600 text-sm mb-4">⏰ 最後更新時間: <span class="font-semibold text-blue-500">{{ lastUpdated }}</span></p>
     <div v-if="stations.length === 0" class="text-center text-gray-500">
       🚲 查無站點，請重新輸入關鍵字
     </div>
@@ -12,7 +11,7 @@
         :key="station.id" 
         class="p-4 border rounded shadow-md bg-white"
       >
-        <h2 class="text-lg font-bold">{{ station.name }}</h2>
+        <h2 class="text-lg font-bold text-blue-600">{{ station.name }}</h2>
         <p>🚲 可借車輛數: <span class="font-semibold text-blue-600">{{ station.sbi }}</span></p>
         <p>🅿️ 可還車輛數: <span class="font-semibold text-green-600">{{ station.bemp }}</span></p>
         <p>📍 地區: {{ station.area }}</p>
